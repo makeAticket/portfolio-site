@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import HeroAnimation from './HeroAnimation';
 import { FiArrowDown } from 'react-icons/fi';
 import NowPlaying from './NowPlaying';
+import WeatherWidget from './WeatherWidget';
 
 // Phrases with specially colored periods
 const typewriterPhrases = [
@@ -67,12 +68,13 @@ export default function Hero() {
       <div className="container mx-auto px-4 md:px-6 z-10 pt-0 mt-2">
         <div className="max-w-3xl ml-8 md:ml-16">
           <motion.div
-            className="mb-8"
+            className="mb-8 flex flex-col sm:flex-row gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             <NowPlaying />
+            <WeatherWidget />
           </motion.div>
 
           <motion.p
